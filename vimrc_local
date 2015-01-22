@@ -1,0 +1,37 @@
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set number
+syntax on
+
+set ic
+set hls
+set is
+
+set wildmode=longest:list;full
+
+set fileencoding=utf-8
+
+autocmd filetype c,cpp set cin
+
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
+let &path.="src/include,"
+
+" NERDTree
+map <c-n> :NERDTreeToggle<cr>
+autocmd StdinReadPre * let s:std in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+set splitright
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<c-a>"
+let g:UltiSnipsListSnippets="<c-d>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"

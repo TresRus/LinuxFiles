@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RUN_DIR=$PWD
+BUILD_DIR=""
+
+if [ $# == 0 ]; then
+	BUILD_DIR=$RUN_DIR
+else
+	BUILD_DIR=$1
+fi
+
+if [ ! -d $BUILD_DIR ]; then
+	echo "Run build++ in project directory or with project directory as first argument"
+	exit 1
+fi
+
+if [ ! -f "$BUILD_DIR/CMakeLists.txt" ]; then
+	echo "Project directory mush contain CMakeLists.txt"
+	exit 1
+fi
+
+cd $BUILD_DIR
+
+echo "build++: prepare directory"
+mkdir -p bin
+mkdir -p build
+
+cd build
+
+echo "build++: run cmake"
+cmake ../
+echo "build++: run make"
+make
+echo "build++: done"
+
+cd $RUN_DIR
