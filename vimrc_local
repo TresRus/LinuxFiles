@@ -11,7 +11,7 @@ set ic
 set hls
 set is
 
-set wildmode=longest:list;full
+set wildmode=longest:list,full
 
 set fileencoding=utf-8
 
