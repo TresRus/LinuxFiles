@@ -9,6 +9,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 

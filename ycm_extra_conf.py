@@ -1,6 +1,5 @@
 import os
 import ycm_core
-
 flags = [
 '-Wall',
 '-Wextra',
@@ -9,18 +8,11 @@ flags = [
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
-'-DNDEBUG',
-# You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
-# source code needs it.
-'-DUSE_CLANG_COMPLETER',
 # 'c++11'.
 '-std=c++11',
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x',
 'c++',
-'-isystem',
-'../BoostParts',
-'-isystem',
 ]
 
 
