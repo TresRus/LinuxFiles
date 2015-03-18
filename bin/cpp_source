@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+	echo "Usage: cpp_source <source_name>"
+	exit 1
+fi
+
+bash_path="`dirname \"$0\"`"
+source_name=$1
+source_name+=".cpp"
+
+cp $bash_path/templates/source.cpp.tmpl $source_name

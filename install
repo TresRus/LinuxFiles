@@ -1,0 +1,47 @@
+#!/bin/bash
+
+if [ $EUID -ne 0 ]; then
+	echo "Install must run with root access"
+	exit 1
+fi
+
+bash_path="`dirname \"$0\"`"
+
+if [ `expr match :$PATH: :$HOME/bin:` -eq 0 ]; then
+       PATH=$HOME/bin:$PATH
+       export PATH
+       sudo echo 'PATH=$HOME/bin:$PATH' >> /etc/profile
+       sudo echo "export PATH" >> /etc/profile
+fi       
+
+mkdir -p $HOME/bin
+
+if [ -e "$HOME/bin/cpp_build" ]; then
+	rm -f $HOME/bin/cpp_build
+fi
+cp $bash_path/bin/cpp_build $HOME/bin/
+
+if [ -e "$HOME/bin/cpp_project" ]; then
+	rm -f $HOME/bin/cpp_project
+fi
+cp $bash_path/bin/cpp_project $HOME/bin/
+
+if [ -e "$HOME/bin/cpp_source" ]; then
+	rm -f $HOME/bin/cpp_source
+fi
+cp $bash_path/bin/cpp_source $HOME/bin/
+
+if [ -e "$HOME/bin/cpp_header" ]; then
+	rm -f $HOME/bin/cpp_header
+fi
+cp $bash_path/bin/cpp_header $HOME/bin/
+
+if [ -e "$HOME/bin/cpp_class" ]; then
+	rm -f $HOME/bin/cpp_class
+fi
+cp $bash_path/bin/cpp_class $HOME/bin/
+
+if [ -d "$HOME/bin/templates" ]; then
+	rm -rf $HOME/bin/templates
+fi
+cp -r $bash_path/bin/templates $HOME/bin/

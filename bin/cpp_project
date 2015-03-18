@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# != 1 ]; then
+	echo "Usage: cpp_project <project_name>"
+	exit 1
+fi
+
+bash_path="`dirname \"$0\"`"
+project_name=$1
+
+mkdir -p $project_name 
+mkdir -p $project_name/source
+mkdir -p $project_name/include
+
+sed "s/<project_name>/$project_name/g" $bash_path/templates/CMakeLists.txt.tmpl > $project_name/CMakeLists.txt
+cp $bash_path/templates/.vimrc.lc.tmpl $project_name/.vimrc
+cp $bash_path/templates/.ycm_extra_conf.py.tmpl $project_name/.ycm_extra_conf.py
+cp $bash_path/templates/main.cpp.tmpl $project_name/source/main.cpp
