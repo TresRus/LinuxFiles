@@ -6,3 +6,4 @@ export SOCKS_SERVER
 export HTTP_PROXY
 export HTTPS_PROXY
 export PATH
+export TERM=xterm-256color
