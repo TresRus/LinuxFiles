@@ -41,9 +41,17 @@ colors koehler
 " vim-airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-nmap \' :b#<bar>bd#<CR>
-nmap \] :bn<CR>
-nmap \[ :bp<CR>
+nmap qd :b#<bar>bd#<CR>
+nmap qk :bn!<CR>
+nmap ql :bn!<CR>
+nmap qj :bp!<CR>
+nmap qh :bp!<CR>
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" windows navigate
+nmap zh <C-w><Left>
+nmap zj <C-w><Down>
+nmap zk <C-w><Up>
+nmap zl <C-w><Right>
