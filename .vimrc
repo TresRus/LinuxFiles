@@ -92,3 +92,5 @@ let g:ycm_global_ycm_extra_conf='./.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 
 let g:clang_library_path='/usr/local/clang-3.6/lib'
+
+set clipboard=unnamedplus
