@@ -78,3 +78,5 @@ nmap zh <C-w><Left>
 nmap zj <C-w><Down>
 nmap zk <C-w><Up>
 nmap zl <C-w><Right>
+
+set clipboard=unnamedplus
